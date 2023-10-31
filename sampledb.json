@@ -1,0 +1,39 @@
+{
+  "scheduledMeetings": [
+    {
+      "id": "4",
+      "clientName": "AAA",
+      "meetingAgenda": "BBB",
+      "attendees": "2",
+      "startTime": "2023-10-31 06:30:00",
+      "endTime": "2023-10-31 07:35:00"
+    },
+    {
+      "id": "6",
+      "clientName": "AAA",
+      "meetingAgenda": "BBB",
+      "attendees": "7",
+      "startTime": "2023-11-08 18:30:00",
+      "endTime": "2023-11-08 19:30:00"
+    },
+    {
+      "id": "8",
+      "clientName": "AAA",
+      "meetingAgenda": "ddd",
+      "attendees": "3",
+      "startTime": "2023-10-31 07:35:00",
+      "endTime": "2023-10-31 09:30:00"
+    }
+  ],
+  "registeredUsers": [
+
+    {
+      "id": "1",
+      "name": "ArunViknesh",
+      "email": "arkrish01@gmail.com",
+      "address": "Chennai",
+      "pwd": "123456",
+      "repeatPwd": "123456"
+    }
+  ]
+}

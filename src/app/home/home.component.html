@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+ 
+  <div class="background-img">  
+ 
+  <div class="container">
+    <form [formGroup]="loginRef"  (ngSubmit)="signIn()">
+      
+  
+      <label for="email"><b>Email</b></label>&nbsp;
+      <input type="email" formControlName="emailid"/><br/>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" formControlName="password"/><br/><br/>
+  
+      <button type="submit" class="btn">Login</button>
+    </form>
+  </div>
+  </div>
+  <app-header></app-header>
+</body>
+</html>

@@ -1,0 +1,40 @@
+body {
+    font-family: "Times New Roman", Georgia, Serif;
+}
+h1{
+    font-family: "Times New Roman";
+  letter-spacing: 1px;
+  margin-left: -11px;
+}
+ h3{
+  font-family: "Times New Roman";
+  letter-spacing: 1px;
+  margin-left: -3px;
+}
+label{
+    font-family: "Times New Roman";
+    letter-spacing: 1px;
+    margin-left: 4px;
+    margin-bottom: 0px;
+  }
+hr{
+    margin-left: 2px;
+    size :10;
+}
+
+.formleft{
+    padding-top: 70px;
+    margin-left: 290px;
+    padding-left: 290px;
+}
+
+input{
+    margin-left: -2px;
+    margin-top: 0px;
+}
+
+.register{
+    margin-left: 150px;
+    text-align: center;
+    
+}

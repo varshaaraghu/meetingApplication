@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+<body>
+   
+   <form [formGroup]="regForm" (ngSubmit)="onRegister()">
+    <div class="formleft" style="white-space:pre-wrap">
+        <!--Two way binding-->
+        <h1> Create a Client</h1>
+        <h3>Please fill in the form to create a client</h3>
+        <hr class="hr" width="45%">
+        <h3>Name </h3><input type="text" placeholder="Enter Name"   formControlName="name"> &nbsp;
+        <small *ngIf="regForm.get('name')?.hasError('required')" class="error-message">Client Name is required.</small>
+
+        <h3>Email</h3> <input type="email" placeholder="Enter Email" formControlName="email">  &nbsp;
+        <small *ngIf="regForm.get('email')?.hasError('required')" class="error-message">Email is required.</small>
+        <small *ngIf="regForm.get('email')?.hasError('email')" class="error-message">Invalid Email.</small>
+
+        <h3>Address</h3> <input type="text" placeholder="Enter Address"  formControlName="address">  &nbsp;
+        <small *ngIf="regForm.get('address')?.hasError('required')" class="error-message">Address is required.</small>
+
+        <h3>Password</h3> <input type="password"placeholder="Enter Password" formControlName="pwd">  &nbsp;
+        <small *ngIf="regForm.get('pwd')?.hasError('required')" class="error-message">Password required.</small>
+        <small *ngIf="regForm.get('pwd')?.hasError('length')" class="error-message">Password must have maximum of 8 and minimum of 5 characters</small>
+
+        <h3>Repeat Password</h3><input type="password" placeholder="Repeat Password" formControlName="repeatPwd">  &nbsp;
+        <small *ngIf="regForm.get('repeatPwd')?.hasError('required')" class="error-message">Confirm password.</small>
+        <small *ngIf="regForm.get('repeatPwd')?.hasError('passwordNoMatch')" class="error-message">Password does not match.</small>
+        <small *ngIf="regForm.get('repeatPwd')?.hasError('length')" class="error-message">Password must have maximum of 8 and minimum of 5 characters</small>
+
+        <hr size="1" width="45%" color="black">  
+        <button class ="register" [disabled]="regForm.invalid">Register</button> 
+    </div>
+</form>
+</body>
+</html>
+
+

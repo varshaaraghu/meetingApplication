@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+<body>
+    
+    <form [formGroup]="scheduleForm"  (ngSubmit)="onSchedule()">
+    <div class="formleft" style="white-space:pre-wrap">
+        <!--Two way binding-->
+        <h1>Schedule Meeting</h1>
+        <h4>Fill the below details to schedule a meeting</h4>
+        <hr size="1" width="45%" color="black">
+        <h3>Client Name </h3><input type="text" placeholder="Enter Client Name"   formControlName="clientName"> &nbsp;
+        <small *ngIf="scheduleForm.get('clientName')?.hasError('required')" class="error-message">Client Name is required.</small>
+        <h3>Meeting Topic</h3> <input type="text" placeholder="Enter Meeting Topic" formControlName="meetingAgenda"> &nbsp;
+        <small *ngIf="scheduleForm.get('meetingAgenda')?.hasError('required')" class="error-message">Meeting Topic is required.</small>
+        <h3>Attendees</h3> <input type="text" placeholder="Enter No of attendees"  formControlName="attendees"> &nbsp;
+        <small *ngIf="scheduleForm.get('attendees')?.hasError('required')" class="error-message">Attendees is required.</small>
+        <small *ngIf="scheduleForm.get('attendees')?.hasError('pattern')" class="error-message">Attendees must be numeric.</small>
+        <small *ngIf="scheduleForm.get('attendees')?.hasError('min')" class="error-message">Minimum persons allowed is 2.</small>
+
+        
+        <h3>Start Time</h3>
+        <input class= "datetimepicker" placeholder="Enter Start time" matInput  formControlName="startTime" [matDatetimepicker]="datetimePicker3" required autocomplete="false"/>
+        <mat-datetimepicker-toggle [for]="datetimePicker3" matSuffix></mat-datetimepicker-toggle>
+        <mat-datetimepicker #datetimePicker3 type="datetime"></mat-datetimepicker>
+        <small *ngIf="scheduleForm.get('startTime')?.hasError('required')" class="error-message">Start Date is required.</small>
+        <small *ngIf="scheduleForm.get('startTime')?.hasError('startDateLessThanToday')" class="error-message">Start Date before current date</small>
+
+        <h3>End Time</h3>
+        <input class= "datetimepicker"  placeholder="Enter End time" matInput   formControlName="endTime" [matDatetimepicker]="datetimePicker1" required autocomplete="false"/>
+        <mat-datetimepicker-toggle [for]="datetimePicker1" matSuffix></mat-datetimepicker-toggle>
+        <mat-datetimepicker #datetimePicker1 type="datetime"></mat-datetimepicker>   
+        <small *ngIf="scheduleForm.get('endTime')?.hasError('required')" class="error-message">End Date is required.</small>  
+        <small *ngIf="scheduleForm.get('endTime')?.hasError('endDateLessThanStartDate')" class="error-message">End Date before start date</small>
+        <small *ngIf="scheduleForm.get('endTime')?.hasError('endDateLessThanToday')" class="error-message">End date before current date</small>
+
+
+          <hr size="1" width="45%" color="black">       
+        <button class ="schedule" [disabled]="scheduleForm.invalid">Schedule</button>
+    </div>
+    </form>
+   
+</body>
+</html>
+
+
